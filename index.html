@@ -4,231 +4,553 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Portfolio of Navin D, aspiring full stack developer with projects in web development and Android malware detection.">
-  <title>NAVIN </title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="script.js" defer></script>
+  <meta name="description" content="Navin D - Full Stack Developer specializing in React, TypeScript, NestJS, and modern web technologies. Building scalable, responsive and accessible web applications.">
+  <meta name="keywords" content="Full Stack Developer, React Developer, TypeScript, JavaScript, Web Developer, NestJS, PostgreSQL">
+  <meta name="author" content="Navin D">
+  <meta property="og:title" content="Navin D - Full Stack Developer">
+  <meta property="og:description" content="Full Stack Developer building scalable, responsive and accessible web applications">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="#">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Navin D - Full Stack Developer">
+  <meta name="twitter:description" content="Full Stack Developer building scalable, responsive and accessible web applications">
+  <link rel="canonical" href="#">
+  
+  <title>Navin D - Full Stack Developer | React & TypeScript Specialist</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/script.js" defer></script>
 </head>
 
 <body>
-  <header>
-    <nav>
-      <!--logo-->
-      <div>Port<span>folio</span></div>
-      <!--ham-->
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <div class="toggle">
-          <div class="circle"></div>
-        </div>
+  <!-- Global Background Animation -->
+  <div class="global-bg-animation">
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+    <div class="bg-shape bg-shape-3"></div>
+  </div>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      <p>Loading Portfolio...</p>
+    </div>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link" data-tooltip="Home"><i class="fas fa-home"></i></a></li>
+        <li><a href="#experience" class="nav-link" data-tooltip="Experience"><i class="fas fa-briefcase"></i></a></li>
+        <li><a href="#education" class="nav-link" data-tooltip="Education"><i class="fas fa-graduation-cap"></i></a></li>
+        <li><a href="#certifications" class="nav-link" data-tooltip="Certificates"><i class="fas fa-certificate"></i></a></li>
+        <li><a href="#skills" class="nav-link" data-tooltip="Skills"><i class="fas fa-code"></i></a></li>
+
+        <li><a href="#contact" class="nav-link" data-tooltip="Contact"><i class="fas fa-envelope"></i></a></li>
       </ul>
 
-    </nav>
-  </header>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" data-tooltip="Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-  <main>
-    <section id="about">
+  <div class="page-wrapper">
+    <aside class="sidebar">
+      <div class="face-card" data-aos="fade-right">
+        <div class="image-container">
+          <img src="images/profile_img.jpg" alt="Navin D - Full Stack Developer" class="profile-image">
+        </div>
+        <h1 class="face-card-name">Navin D</h1>
+        <p class="face-card-bio">Full Stack Developer</p>
+        <div class="hero-social">
+          <a href="mailto:navindcse@gmail.com" class="social-link" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/navin-d-592550262/" target="_blank" class="social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="#" target="_blank" class="social-link" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="tel:+919342526161" class="social-link" aria-label="Phone">
+            <i class="fas fa-phone-alt"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+    <main class="main-content">
 
-      <div class="about-content">
-        <div class="about-text">
-          <h1>Hi, I'm Navin 👋</h1>
-          <h2>Full Stack developer</h2>
-        </div>
-        <img src="images/profile_circle.png">
-      </div>
-      <p class="about-description">Building websites is something I truly enjoy.
-        This is my space to showcase what I’ve built so far.
-        I’m excited to keep learning and adding more projects here.
-        Each project is a chance for me to try new ideas and have fun creating.
-        I hope you enjoy exploring my work as much as I enjoyed making it.
-      </p>
-      <a class="resume" href="https://github.com/NavinD-Projects/resume/blob/main/Navin_D_Resume%20(1).pdf"
-        target="_blank">Resume</a>
-    </section>
-    <section id="skills">
-      <div class="title">
-        <h2 class="skills-title">Skills</h2>
-      </div>
-      <div class="skills-known">
-        <div class="box">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
-          <p>HTML</p>
-        </div>
-        <div class="box">
-          <img src="images/lang/css.png">
-          <p>CSS</p>
-        </div>
-        <div class="box">
-          <img src="images/lang/JS.webp">
-          <p>JavaScript</p>
-        </div>
-        <div class="box">
-          <img src="images/lang/React (1).png">
-          <p>React</p>
-        </div>
-        <div class="box">
-          <img src="images/lang/Tailwind CSS.png">
-          <p>Tailwind</p>
-        </div>
-        <div class="box">
-          <img src="images/lang/Node.js.png">
-          <p>Node.js</p>
-        </div>
-        <div class="box">
-          <img src="images/lang/expressjs.png">
-          <p>Express.js</p>
-        </div>
-        <div class="box">
-          <img src="images/lang/nextjs.png">
-          <p>Next.js</p>
-        </div>
-        <div class="box">
-          <img src="images/lang/MySQL (1).png">
-          <p>MySQL</p>
-        </div>
-        <div class="box">
-          <img src="images/lang/Postgresql_elephant.svg.png">
-          <p>PostgreSQL</p>
-        </div>
-        <div class="box">
-          <img src="images/lang/c.png">
-          <p>C</p>
-        </div>
-        <div class="box">
-          <img src="images/lang/c++.png">
-          <p>C++</p>
-        </div>
-        <div class="box">
-          <img src="images/lang/Java (1).png">
-          <p>Java</p>
-        </div>
-        <div class="box">
-          <img src="images/lang/python.png">
-          <p>Python</p>
-        </div>
-        <div class="box">
-          <i class="fa-brands fa-github"></i>
-          <p>GitHub</p>
-        </div>
-        <div class="box">
-          <img src="images/lang/vs.png">
-          <p>VS Code</p>
-        </div>
-      </div>
-    </section>
-    <section id="projects">
-      <h2 class="project-title">Projects</h2>
-
-      <div class="projects-done">
-        <div class="project">
-          <img src="images/project1.png" alt="Profile picture">
-          <h3 class="projectname">Bus Reservation System</h3>
-          <p class="projectdes">Built a full-stack web application for bus ticket booking, route management, and
-            booking
-            status tracking.</P>
-          <h4 class="projectstack">Tech stack</h4>
-          <ul>
-            <li>Html,</li>
-            <li>Css,</li>
-            <li>Javascript,</li>
-            <li>React.</li>
-          </ul>
-          <div class="link">
-            <h4>Git</h4>
-            <a href="https://github.com/NavinD-Projects" target="_blank">
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </div>
-        </div>
-        <div class="project">
-          <div class="project-img">
-            <img class="projectimage" src="images/project2.png" alt="Android Malware Detection System screenshot">
-          </div>
-          <h3 class="projectname">ANDROID MALWARE DETECTION SYSTEM</h3>
-          <p class="projectdes">Built an Android malware detector using CatBoost and Androguard, secured with
-            blockchain
-            and smart contracts.</p>
-          <h4 class="projectstack">Tech stack</h4>
-          <ul>
-            <li>Html,</li>
-            <li>Css,</li>
-            <li>Javascript,</li>
-            <li>Python.</li>
-          </ul>
-          <div class="link">
-            <h4>Git</h4>
-            <a href="https://github.com/NavinD-Projects" target="_blank">
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="inputform">
-        <form class="container" action="https://formspree.io/f/xjkolrdn" method="post">
-          <div class="group">
-            <label for="name">Name</label>
-            <input type="text" placeholder="Enter your name" id="name" name="name" required>
-            <span class="error" id="nameErr"> </span>
-          </div>
-          <div class="group">
-            <label for="email">Email</label>
-            <input type="email" placeholder="Enter your mail" id="email" name="email" required>
-            <span class="error" id="emailErr"> </span>
-          </div>
-          <div class="group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" row="6" placeholder="Type your message here..." required></textarea>
-            <span class="error" id="msgErr"> </span>
-          </div>
-          <button type="submit">Send</button>
-        </form>
-      </div>
-    </section>
-    <section id="thanks">
-      <p class="note">Thanks for visiting my portfolio! <br>You can reach me at.</p>
-
-      <div class="social">
-        <a href="mailto:navindurai6@gmail.com" target="_blank">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-        <a href="https://x.com/Navin__lee" target="_blank">
-          <i class="fa-brands fa-x-twitter"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/navin-d-592550262/" target="_blank">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/NavinD-Projects" target="_blank">
-          <i class="fa-brands fa-github"></i>
-        </a>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <p> &copy;2025 All rights reserved by Navin D</p>
-  </footer>
+  <!-- Certificate Modal -->
+  <div id="certModal" class="cert-modal">
+    <span class="close-modal">&times;</span>
+    <div class="modal-content-container" style="width: 80vw; height: 85vh;">
+      <iframe class="modal-content" id="certIframe" style="width: 100%; height: 100%; border: none; background: white;"></iframe>
+    </div>
   </div>
-</body>
+  
 
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-background">
+      <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+      </div>
+    </div>
+    
+    <div class="hero-container">
+      <div class="hero-content">
+        
+        <div class="hero-text-content" data-aos="fade-left">
+          <h2 class="huge-title">
+            <span class="solid-text">FULL STACK</span><br>
+            <span class="ghost-text">DEVELOPER</span>
+          </h2>
+          <p class="hero-summary">
+            <cite index="1-1,1-2,1-3">Full Stack Developer with 1 year of experience building and maintaining web applications using React.js, TypeScript, NestJS, and PostgreSQL. Experienced in developing responsive interfaces, REST APIs, database solutions, accessibility improvements, and delivering end-to-end feature development. Continuously learning networking fundamentals and applying AI-assisted development tools to improve productivity.</cite>
+          </p>
+          
+          <div class="stats-grid">
+            <div class="stat-item" data-aos="zoom-in-up">
+              <div class="stat-number"><span data-target="1">0</span></div>
+              <div class="stat-label">YEAR OF<br>EXPERIENCE</div>
+            </div>
+
+            <div class="stat-item" data-aos="zoom-in-up" data-aos-delay="200">
+              <div class="stat-number">+<span data-target="15">0</span></div>
+              <div class="stat-label">TECHNOLOGIES<br>MASTERED</div>
+            </div>
+          </div>
+          
+          <div class="hero-buttons">
+
+            <a href="https://github.com/NavinD-Projects/resume/blob/main/Navin.D_Resume.pdf" target="_blank" class="btn btn-primary" id="download-resume">
+              <i class="fas fa-eye"></i> View Resume
+            </a>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+  </section>
+
+
+  <!-- Experience Section -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <div class="section-header" data-aos="fade-down">
+        <h2 class="huge-title">
+          <span class="solid-text">WORK</span><br>
+          <span class="ghost-text">EXPERIENCE</span>
+        </h2>
+        <p class="section-subtitle">My journey in tech</p>
+      </div>
+      
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Aug 2025 – Present</div>
+            <h3>Full Stack Developer</h3>
+            <h4>Finstein</h4>
+            <div class="project-highlight">
+              <strong>PrimeVyuh – Financial Advisory Platform (Client Project)</strong>
+            </div>
+            <ul>
+              <li><cite index="1-4">Developed and maintained full-stack features for the Admin Portal and Website using React.js, TypeScript, NestJS, and PostgreSQL</cite></li>
+              <li><cite index="1-5">Designed responsive user interfaces from Figma designs with focus on usability and cross-device compatibility</cite></li>
+              <li><cite index="1-6,1-7">Developed and integrated REST APIs to support frontend functionality and designed PostgreSQL tables, relationships, and queries using TypeORM</cite></li>
+              <li><cite index="1-8,1-9">Debugged and resolved frontend, backend, and database issues while performing accessibility testing using NVDA and Colour Contrast Analyser (CCA)</cite></li>
+              <li><cite index="1-10">Used GitLab, Swagger, and DBeaver for development, API testing, and database management</cite></li>
+            </ul>
+            <div class="project-highlight">
+              <strong>Vornix – Internal Project</strong>
+            </div>
+            <ul>
+              <li><cite index="1-11,1-12,1-13">Contributed to full-stack application development by building UI components, REST APIs, and PostgreSQL database structures while participating in end-to-end feature development</cite></li>
+            </ul>
+            <div class="timeline-skills">
+              <span>React.js</span>
+              <span>TypeScript</span>
+              <span>NestJS</span>
+              <span>PostgreSQL</span>
+              <span>TypeORM</span>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Aug 2024 – Sep 2024</div>
+            <h3>Frontend Developer Intern</h3>
+            <h4>Zoho Corporation</h4>
+            <ul>
+              <li><cite index="1-16">Developed responsive web pages using HTML, CSS, and JavaScript</cite></li>
+              <li><cite index="1-17">Built reusable UI components and gained practical experience in frontend development practices</cite></li>
+            </ul>
+            <div class="timeline-skills">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="experience" id="education">
+    <div class="container">
+      <div class="section-header" data-aos="fade-down">
+        <h2 class="huge-title">
+          <span class="solid-text">MY</span><br>
+          <span class="ghost-text">EDUCATION</span>
+        </h2>
+        <p class="section-subtitle">Academic background</p>
+      </div>
+      
+      <div class="timeline">
+        <div class="timeline-item" data-aos="zoom-in-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">2021 – 2025</div>
+            <h3>Bachelor of Engineering in Computer Science</h3>
+            <h4>Kingston Engineering College</h4>
+            <ul>
+              <li>CGPA: 8.1</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section class="certifications" id="certifications">
+    <div class="container">
+      <div class="section-header" data-aos="fade-down">
+        <h2 class="huge-title">
+          <span class="solid-text">MY</span><br>
+          <span class="ghost-text">CERTIFICATES</span>
+        </h2>
+        <p class="section-subtitle">Professional milestones</p>
+      </div>
+      
+      <div class="certifications-grid">
+        <div class="cert-card" data-aos="flip-left" onclick="openCertModal('images/full stack certificate nm.pdf')">
+          <div class="cert-icon"><i class="fas fa-award"></i></div>
+          <h3>Web Technology Full Stack Using Django</h3>
+          <p>Edunet Foundation / EY</p>
+          <div class="cert-year">2024</div>
+        </div>
+        
+        <div class="cert-card" data-aos="flip-right" data-aos-delay="100" onclick="openCertModal('images/Database and SQL Certificate.pdf')">
+          <div class="cert-icon"><i class="fas fa-award"></i></div>
+          <h3>Database and SQL</h3>
+          <p>Infosys Springboard</p>
+          <div class="cert-year">2025</div>
+        </div>
+        
+        <div class="cert-card" data-aos="flip-left" data-aos-delay="200" onclick="openCertModal('images/intorIntroduction to Agile Methodology.pdf')">
+          <div class="cert-icon"><i class="fas fa-award"></i></div>
+          <h3>Introduction to Agile methodology</h3>
+          <p>Infosys Springboard</p>
+          <div class="cert-year">2024</div>
+        </div>
+        
+        <div class="cert-card" data-aos="flip-right" data-aos-delay="300" onclick="openCertModal('images/Networking Essential Certificate.pdf')">
+          <div class="cert-icon"><i class="fas fa-award"></i></div>
+          <h3>Networking Essentials</h3>
+          <p>Cisco Networking Academy</p>
+          <div class="cert-year">2023</div>
+        </div>
+        
+        <div class="cert-card" data-aos="flip-up" data-aos-delay="400" onclick="openCertModal('images/Python Certificate.pdf')">
+          <div class="cert-icon"><i class="fas fa-award"></i></div>
+          <h3>Free Python Course</h3>
+          <p>GeeksforGeeks</p>
+          <div class="cert-year">2025</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="section-header" data-aos="fade-down">
+        <h2 class="huge-title">
+          <span class="solid-text">CORE</span><br>
+          <span class="ghost-text">SKILLS</span>
+        </h2>
+        <p class="section-subtitle">Technologies I work with</p>
+      </div>
+      
+      <div class="skills-grid">
+        <!-- Frontend -->
+        <div class="skill-category" data-aos="fade-right">
+          <div class="category-header">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Frontend</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <i class="devicon-html5-plain"></i>
+              <span>HTML5</span>
+            </div>
+            <div class="skill-item">
+              <i class="devicon-css3-plain"></i>
+              <span>CSS3</span>
+            </div>
+            <div class="skill-item">
+              <i class="devicon-javascript-plain"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <i class="devicon-typescript-plain"></i>
+              <span>TypeScript</span>
+            </div>
+            <div class="skill-item">
+              <i class="devicon-react-original"></i>
+              <span>React</span>
+            </div>
+            <div class="skill-item">
+              <i class="devicon-tailwindcss-plain"></i>
+              <span>Tailwind CSS</span>
+            </div>
+            <div class="skill-item">
+              <i class="devicon-vitejs-plain"></i>
+              <span>Vite</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend & DB -->
+        <div class="skill-category" data-aos="zoom-in" data-aos-delay="100">
+          <div class="category-header">
+            <i class="fas fa-server"></i>
+            <h3>Backend & Database</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <i class="devicon-nestjs-plain"></i>
+              <span>NestJS</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-database"></i>
+              <span>TypeORM</span>
+            </div>
+            <div class="skill-item">
+              <i class="devicon-postgresql-plain"></i>
+              <span>PostgreSQL</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-database"></i>
+              <span>SQL</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-network-wired"></i>
+              <span>REST APIs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools & Practices -->
+        <div class="skill-category" data-aos="fade-left" data-aos-delay="200">
+          <div class="category-header">
+            <i class="fas fa-tools"></i>
+            <h3>Tools & Practices</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <i class="devicon-gitlab-plain"></i>
+              <span>GitLab</span>
+            </div>
+            <div class="skill-item">
+              <i class="devicon-github-original"></i>
+              <span>GitHub</span>
+            </div>
+            <div class="skill-item">
+              <i class="devicon-vscode-plain"></i>
+              <span>VS Code</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-database"></i>
+              <span>DBeaver</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-file-code"></i>
+              <span>Swagger</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-terminal"></i>
+              <span>Command Line</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-users"></i>
+              <span>Agile/Scrum</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-universal-access"></i>
+              <span>Accessibility</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header" data-aos="fade-down">
+        <h2 class="huge-title">
+          <span class="solid-text">LET'S</span><br>
+          <span class="ghost-text">TALK</span>
+        </h2>
+        <p class="section-subtitle">Get in touch for opportunities or collaborations</p>
+      </div>
+      
+      <div class="contact-content">
+        <div class="contact-form" data-aos="zoom-in-up">
+          <form id="contact-form" action="https://formspree.io/f/xjkolrdn" method="post">
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" required>
+              <span class="error-message" id="nameError"></span>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+              <span class="error-message" id="emailError"></span>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject">
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+              <span class="error-message" id="messageError"></span>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-loading">Sending...</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <div class="footer-logo">
+            <span>&lt;</span>Navin<span>/&gt;</span>
+          </div>
+          <p>Full Stack Developer passionate about creating exceptional digital experiences.</p>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="https://github.com/NavinD-Projects?tab=repositories" target="_blank">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-section">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#">Full Stack Development</a></li>
+              <li><a href="#">React Applications</a></li>
+              <li><a href="#">REST API Development</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="footer-social">
+          <h4>Connect</h4>
+          <div class="social-links">
+            <a href="mailto:navindcse@gmail.com" class="social-link" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/navin-d-592550262/" target="_blank" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#" target="_blank" class="social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="tel:+919342526161" class="social-link" aria-label="Phone">
+              <i class="fas fa-phone-alt"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Navin D. All rights reserved.</p>
+        <button class="back-to-top" id="backToTop">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+  <script type="module">
+    import { Trail } from "https://esm.sh/mouse-animations";
+    const trail = new Trail({
+      color: '#c084fc',
+      size: 5,
+      length: 20,
+      decay: 0.05,
+      blur: 0,
+    });
+  </script>
+</body>
 </html>
